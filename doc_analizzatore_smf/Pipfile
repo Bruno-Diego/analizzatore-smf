@@ -1,0 +1,27 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pandas = "*"
+ipython = "*"
+tabulate = "*"
+wxpython = "*"
+justpy = "*"
+install = "*"
+click = "*"
+colorama = "*"
+chardet = "*"
+openpyxl = "*"
+pyinstaller = "*"
+click-spinner = "*"
+
+[dev-packages]
+install = "*"
+ipython = "*"
+pyinstaller = "*"
+
+[requires]
+python_version = "3.8"
+python_full_version = "3.8.9"

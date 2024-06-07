@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS for Materialize-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript for Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>       
+    <link rel="stylesheet" href="{% static 'styles/analizzatore.css' %}">
+    <script type="text/javascript" src="{% static 'scripts/analizzatore-result.js' %}"></script>
+    <script type="text/javascript" src="{% static 'scripts/analizzatoreform.js' %}"></script>
+    <!-- charts -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+   
+    <title>M4RT1KY0</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="{% url 'analizzatore' %}" class="brand-logo center">Analizzatore_smf_123_2_1.3.3</a>
+        </div>
+    </nav>
+    <header>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>    
+</body>
+</html>

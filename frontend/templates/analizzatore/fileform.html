@@ -1,0 +1,61 @@
+{% extends "analizzatore/analizzatore.html" %}
+{% block content %}
+<div class="card" id="form-card">
+    <div class="card-content">
+
+        <div id="form">
+            <form method="post" enctype="multipart/form-data" id="formfield">
+                {% csrf_token %}
+                <div class="file-field input-field">
+                    <div class="btn">
+                    <span>File</span>
+                        <input type="file" name="file" id="fileInput">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" placeholder="Upload one SMF file" type="text" name="file" required>
+                    </div>
+                </div>
+                <div class="analiz-butns">
+                    <div id="avvia">
+                        <button type="submit" class="waves-effect waves-light btn-large" id="btn-display" name="action" value="display">
+                            <div id="btn-txt">
+                                Display datti
+                            </div>
+                            <div class="preloader-wrapper small active" id="preloader-display">
+                                <div class="spinner-layer spinner-blue-only">
+                                  <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                  </div><div class="gap-patch">
+                                    <div class="circle"></div>
+                                  </div><div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                  </div>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                    <div id="exportexcel">
+                        <button type="submit" class="waves-effect waves-light btn-large" name="action" value="export" id="btn-export">
+                            <div id="btn-txt-exp">
+                                Esporta Excel 
+                            </div>
+                            <div class="preloader-wrapper small active" id="preloader-export">
+                                <div class="spinner-layer spinner-blue-only">
+                                  <div class="circle-clipper left">
+                                    <div class="circle"></div>
+                                  </div><div class="gap-patch">
+                                    <div class="circle"></div>
+                                  </div><div class="circle-clipper right">
+                                    <div class="circle"></div>
+                                  </div>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<a onclick="M.toast({html: 'M4RT1KY0'})" class="btn-small toast toast-position">Acronimo</a>
+{% endblock %}

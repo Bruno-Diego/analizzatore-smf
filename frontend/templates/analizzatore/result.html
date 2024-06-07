@@ -1,0 +1,99 @@
+{% extends "analizzatore/analizzatore.html" %}
+{% block content %}
+<div id="result" class="container">
+    <!-- <h1 class="result-title">Questi sono i risultati</h1> -->
+    <div class="row">
+        <div class="col s12">
+          <ul id="tabs-swipe-demo" class="tabs">
+            <li class="tab col s3"><a class="active" href="#dettagli">Dettaglio Chiamate</a></li>
+            <li class="tab col s3"><a href="#numeri">Numeri Richieste API</a></li>
+          </ul>
+        </div>
+        <div id="dettagli" class="col s12">
+            <div id="table">
+                <table class="highlight responsive-table">
+                    <tr>
+                        <th>
+                            
+                        </th>
+                        {% for data in smf_headers %}
+                        <th id="table-header-{{ data }}" onclick="toggleContent('table-header-{{ data }}')">
+                            {{ data }}
+                        </th>
+                        {% endfor %}
+                    </tr>
+                    {% for data in smf_df %}
+                    <tr>
+                        <td>
+                            <strong>{{ forloop.counter0 }}</strong>
+                        </td>
+                        {% for item in data %}
+                        <td>
+                            {{ item }}
+                        </td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <div id="numeri" class="col s12">
+            <div id="table">
+                <table class="highlight responsive-table">
+                    <tr>
+                        <th>
+                            
+                        </th>
+                        {% for data in medie_header %}
+                        <th id="table-header-{{ data }}-medie" onclick="toggleContent('table-header-{{ data }}-medie')">
+                            {{ data }}
+                        </th>
+                        {% endfor %}
+                    </tr>
+                    {% for data in medie_df %}
+                    <tr>
+                        <td>
+                            <strong>{{ forloop.counter0 }}</strong>
+                        </td>
+                        {% for item in data %}
+                        <td>
+                            {{ item }}
+                        </td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-content">
+            <div class="chart">
+                <div class="col-5 chart-col">
+        
+                    <h3 class="chart-title"> Numero di Execuzioni </h3>
+            
+                    {% autoescape off %}
+            
+                    {{ line_chart_exec }}
+                    
+                    {% endautoescape %}
+            
+                </div>
+                <div class="col-5 chart-col">
+        
+                    <h3 class="chart-title"> Tempi di Execuzioni </h3>
+            
+                    {% autoescape off %}
+            
+                    {{ line_chart_tempo }}
+                    
+                    {% endautoescape %}
+            
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- {{ dataframe }} -->
+</div>
+{% endblock %}
