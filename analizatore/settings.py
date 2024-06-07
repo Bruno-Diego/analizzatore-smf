@@ -74,7 +74,7 @@ TEMPLATES = [
 
 # DATA_UPLOAD_MAX_MEMORY_SIZE = 500000000
 
-WSGI_APPLICATION = 'analizatore.wsgi.application'
+WSGI_APPLICATION = 'analizatore.wsgi.app'
 
 
 # Database
