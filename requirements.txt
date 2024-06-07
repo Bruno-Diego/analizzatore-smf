@@ -15,7 +15,6 @@ dash-core-components==2.0.0
 dash-html-components==2.0.0
 dash-table==5.0.0
 distlib==0.3.8
-django-tailwind==3.8.0
 et-xmlfile==1.1.0
 filelock==3.13.4
 Flask==3.0.3
