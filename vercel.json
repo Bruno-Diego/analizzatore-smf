@@ -2,7 +2,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "analizzatore/wsgi.py"
+      "dest": "analizatore/wsgi.py"
     }
   ]
 }
